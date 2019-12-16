@@ -8,6 +8,8 @@
 #include "Zebra.h"
 #include "Person.h"
 #include "Employee.h"
+#include "Student.h"
+#include "Teacher.h"
 
 using namespace std;
 
@@ -71,6 +73,20 @@ int main() {
 	Dog dog;
 	Zebra zebra; // zebra exist within the main scope
 	Person person;
+
+	// L38 Constructor Initialization Lists
+	Teacher teacher1;
+	Teacher teacher2("Bob", 33);
+	Teacher teacher3("Johnny", 55, false);
+	cout << "Teacher 1 is " << teacher1.toString() << endl;
+	cout << "Teacher 2 is " << teacher2.toString() << endl;
+	cout << "Teacher 3 is " << teacher3.toString() << endl;
+
+	// L37 The 'this' keyword
+	Student student1;
+	Student student2("Bobby", 25);
+	cout << "Student 1 is " << student1.toString() << endl;
+	cout << "Student 2 is " << student2.toString() << endl;
 
 	// L36 Overloading Constructors
 	Employee employee1;

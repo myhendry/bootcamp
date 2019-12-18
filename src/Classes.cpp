@@ -67,12 +67,105 @@ string printString()
 // void doSomething(); // Using Prototype - Implementation of main function after main()
 
 
+// L39B Pointers
+void manipulate(double* pValue) {
+	cout << "2A. Value of pValue in manipulate: " << pValue << endl;
+	cout << "2B. Value of *pValue in manipulate: " << *pValue << endl;
+	*pValue = 10.0;
+	cout << "3. Value of *pValue in manipulate: " << *pValue << endl;
+}
+
 int main() {
 	cout <<  "Running program...." << endl;
 	Cat cat;
 	Dog dog;
 	Zebra zebra; // zebra exist within the main scope
 	Person person;
+
+	// L41 Pointers and Arrays
+	string arr[] = {"one", "two", "three" };
+	cout << "&arr[1]: " << &arr[1] << endl;
+	cout << "&arr[2]: " << &arr[2] << endl;
+
+	cout << endl;
+
+	// Loop through Array 1
+	for (int i=0; i < (sizeof(arr)/sizeof(string)) ; i++) {
+		cout << "Loop through Array 1: " << arr[i] << endl;
+	}
+
+	cout << endl;
+
+	// Loop through Array 2
+	string* parr = arr;
+	cout << "parr: " <<  parr << endl;
+
+	for (int i=0; i < (sizeof(arr)/sizeof(string)); i++) {
+		cout << "Loop through Array 2: " << parr[i] << endl;
+	}
+
+	cout << endl;
+
+	// Loop through Array 3
+//	 cout << "*parr: " << *parr << endl;
+//
+//	for (int i=0; i < (sizeof(arr)/sizeof(string)); i++) {
+//		cout << "Loop through Array 3: " << *parr << endl;
+//		parr++;
+//	}
+
+	cout << endl;
+
+	// Loop through Array 4
+
+
+	for (int i=0; i < (sizeof(arr)/sizeof(string)); i++, parr++) {
+		cout << "Loop through Array 4: " << *parr << endl;
+	}
+
+	cout << endl;
+
+	// Loop through Array 5
+	string* pStart = &arr[0];
+	string* pEnd = &arr[2];
+
+	while(true) {
+		cout << "Loop through Array 5: " << *pStart << endl;
+
+		if (pStart == pEnd) {
+			break;
+		}
+
+		pStart++;
+	}
+
+	cout << endl;
+
+	// L40 Arithmetic
+	int value1 = 7/2; // will return 3 rather than 3.5 in C++ because in C++ if integer divide by integer will return an integer. To return a float, one of the divisor will need to be a float too
+	cout << "Value 1: " << value1 << endl;
+	double value2 = (double)7/2; // use CASTING to convert one of the divisor to double to return double value
+	cout << "Value 2: " << value2 << endl;
+
+	int value3 = 5%3;
+	cout << "Mod Value 3: " << value3 << endl;
+
+	// L39 Pointers
+	int nAmt = 20;
+	int* pnAmt = &nAmt;
+	cout << "pnAmt: " << pnAmt << endl;
+	cout << "*pnAmt: " << *pnAmt << endl;
+
+	int nValue = 12;
+	int* pnValue = &nValue;
+	cout << "nValue is: " << nValue << endl;
+	cout << "pnValue is: " << pnValue << endl;
+	cout << "*pnValue is " << *pnValue << endl;
+
+	double dValue = 18;
+	cout << "1. dValue: " << dValue << endl;
+	manipulate(&dValue);
+	cout << "4. dValue: " << dValue << endl;
 
 	// L38 Constructor Initialization Lists
 	Teacher teacher1;

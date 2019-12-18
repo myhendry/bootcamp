@@ -7,24 +7,33 @@ CPP_SRCS += \
 ../src/Cat.cpp \
 ../src/Classes.cpp \
 ../src/Dog.cpp \
+../src/Employee.cpp \
 ../src/Head.cpp \
 ../src/Person.cpp \
+../src/Student.cpp \
+../src/Teacher.cpp \
 ../src/Zebra.cpp 
 
 OBJS += \
 ./src/Cat.o \
 ./src/Classes.o \
 ./src/Dog.o \
+./src/Employee.o \
 ./src/Head.o \
 ./src/Person.o \
+./src/Student.o \
+./src/Teacher.o \
 ./src/Zebra.o 
 
 CPP_DEPS += \
 ./src/Cat.d \
 ./src/Classes.d \
 ./src/Dog.d \
+./src/Employee.d \
 ./src/Head.d \
 ./src/Person.d \
+./src/Student.d \
+./src/Teacher.d \
 ./src/Zebra.d 
 
 
